@@ -1,6 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { black } from "react-native-paper/lib/typescript/styles/colors";
 
 export default function PersonOverlay({image, name, dob, form, hide, navigation})
 {
@@ -65,5 +66,6 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 18,
+        color: "grey",
     }
   });

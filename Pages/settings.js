@@ -103,7 +103,7 @@ export default function Settings(){
         <ScrollView>
             <TouchableOpacity onPress={openDatePicker}>
                 <View style={styles.settingListView}>
-                    <Text>Change Start Date</Text>
+                    <Text style={styles.text}>Change Start Date</Text>
                 </View>
                 <DatePicker
                     isVisible={showDatePicker}
@@ -120,8 +120,9 @@ export default function Settings(){
             </TouchableOpacity>
             <TouchableOpacity>
                 <View style={[styles.settingListView, styles.checkBoxListView]}>
-                    <Text style={{top: 6}}>Count From Zero</Text>
+                    <Text style={styles.checkBoxText}>Count From Zero</Text>
                     <CheckBox
+                        tintColors={{ true: '#FE70C8', false: 'grey' }}
                         disabled={false}
                         value={countFromZero}
                         onValueChange={(newValue) => countFromZeroSetter(newValue)}
@@ -130,8 +131,9 @@ export default function Settings(){
             </TouchableOpacity>
             <TouchableOpacity>
                 <View style={[styles.settingListView, styles.checkBoxListView]}>
-                    <Text style={{top: 6}}>Display As Y/M/D</Text>
+                    <Text style={styles.checkBoxText}>Display As Y/M/D</Text>
                     <CheckBox
+                        tintColors={{ true: '#FE70C8', false: 'grey' }}
                         disabled={false}
                         value={YMD}
                         onValueChange={(newValue) => YMDSetter(newValue)}
@@ -140,17 +142,17 @@ export default function Settings(){
             </TouchableOpacity>
             <TouchableOpacity onPress={ConfirmAlert}>
                 <View style={styles.settingListView}>
-                    <Text>Reset All Data</Text>
+                    <Text style={styles.text}>Reset All Data</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
                 <View style={styles.settingListView}>
-                    <Text>V 1.0.0</Text>
+                    <Text style={styles.text}>V 1.0.0</Text>
                 </View>
             </TouchableOpacity>
             <View>
                 <Text></Text>
-                <Text style={{alignSelf: "center"}}>Developed by YMT</Text>
+                <Text style={{alignSelf: "center", color: "grey"}}>Developed by YMT</Text>
             </View>
         </ScrollView>
     )
@@ -166,5 +168,12 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         justifyContent: "space-between",
-    }
+    },
+    text: {
+        color: "grey",
+    },
+    checkBoxText: {
+        color: "grey",
+        top: 6,
+    },
 })

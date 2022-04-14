@@ -105,11 +105,13 @@ export default function Form1({navigation}){
                             value={values.name}
                             style={styles.textInput}
                             placeholder={name}
+                            placeholderTextColor="grey" 
+                            color="grey"
                         />
                         <Text style={{ color: 'red', marginHorizontal: 15 }}>{touched.name && errors.name}</Text>
                         
                         <View style={styles.dobView}>
-                            <Text style={{alignSelf: "center"}}>Date of Birth : </Text>
+                            <Text style={{alignSelf: "center", color: "grey"}}>Date of Birth : </Text>
                             <View>
                                 <TouchableOpacity style={styles.chooseDob} onPress={openDatePicker}>
                                     <Text style={styles.text}>Choose Date Of Birth</Text>
@@ -174,13 +176,15 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     dobText:{
-        alignSelf: "center"
+        alignSelf: "center",
+        color: "grey",
     },
     button:{
         backgroundColor: "#FE70C8",
         paddingHorizontal: 30,
         paddingVertical: 10,
-        borderRadius: 30,
+        borderRadius: 10,
+        marginHorizontal: 20,
     },
     text:{
         fontSize: 15,
